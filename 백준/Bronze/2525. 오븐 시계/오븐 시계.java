@@ -1,3 +1,5 @@
+
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +7,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		String str = sc.nextLine();
-		String[] arr = str.split(" ", 2);
+		String[] arr = str.split(" ");
 		int hour = Integer.parseInt(arr[0]);
 		int min = Integer.parseInt(arr[1]);
 		int cookMin = sc.nextInt();
