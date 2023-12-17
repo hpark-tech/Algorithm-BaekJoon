@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,8 +8,6 @@ public class Main {
 		int allcost = sc.nextInt();
 		int allkind = sc.nextInt();
 		int cal = 0;
-		String a = "long ";
-		String k ="";
 		for (int i = 0; i < allkind; i++) {
 			int cost = sc.nextInt();
 			int num = sc.nextInt();
