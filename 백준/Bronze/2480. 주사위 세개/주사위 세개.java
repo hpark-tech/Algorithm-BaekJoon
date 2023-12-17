@@ -9,7 +9,6 @@ public class Main {
 		int b = sc.nextInt();
 		int c = sc.nextInt();
 		int max = a;
-		int min = a;
 		if (b > max) {
 			max = b;
 		}
