@@ -17,28 +17,28 @@ public class Main {
 			point[i] = sc.nextDouble();
 			grade[i] = sc.next();
 			if (grade[i].equals("P")) {
-				grade[i] = Double.toString(0.0);
+				grade[i] = "0.0";
 				point[i] = 0.0;
 			}
 			allPoint += point[i];
 			if (grade[i].equals("A+")) {
-				grade[i] = Double.toString(4.5);
+				grade[i] = "4.5";
 			} else if (grade[i].equals("A0")) {
-				grade[i] = Double.toString(4.0);
+				grade[i] = "4.0";
 			} else if (grade[i].equals("B+")) {
-				grade[i] = Double.toString(3.5);
+				grade[i] = "3.5";
 			} else if (grade[i].equals("B0")) {
-				grade[i] = Double.toString(3.0);
+				grade[i] = "3.0";
 			} else if (grade[i].equals("C+")) {
-				grade[i] = Double.toString(2.5);
+				grade[i] = "2.5";
 			} else if (grade[i].equals("C0")) {
-				grade[i] = Double.toString(2.0);
+				grade[i] = "2.0";
 			} else if (grade[i].equals("D+")) {
-				grade[i] = Double.toString(1.5);
+				grade[i] = "1.5";
 			} else if (grade[i].equals("D0")) {
-				grade[i] = Double.toString(1.0);
+				grade[i] = "1.0";
 			} else if (grade[i].equals("F")) {
-				grade[i] = Double.toString(0.0);
+				grade[i] = "0.0";
 			}
 			allPointGrade += (point[i] * Double.parseDouble(grade[i]));
 		}
