@@ -16,8 +16,7 @@ public class Main {
 			int i = sc.nextInt();
 			int j = sc.nextInt();
 			int ii = arr[i];
-			int jj = arr[j];
-			arr[i] = jj;
+			arr[i] = arr[j];
 			arr[j] = ii;
 		}
 		for (int h = 1; h < n + 1; h++) {
