@@ -7,8 +7,9 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		String arr[] = new String[2];
-		arr[0] = sc.next();
-		arr[1] = sc.next();
+		for (int k = 0; k < 2; k++) {
+			arr[k] = sc.next();
+		}
 		String arr1[] = new String[3];
 		int arr2[] = new int[2];
 		for (int i = 0; i < 2; i++) {
