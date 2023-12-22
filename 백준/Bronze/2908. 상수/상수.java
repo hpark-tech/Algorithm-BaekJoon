@@ -12,9 +12,9 @@ public class Main {
 		String arr1[] = new String[3];
 		int arr2[] = new int[2];
 		for (int i = 0; i < 2; i++) {
-			arr1[0] = Character.toString(arr[i].charAt(0));
-			arr1[1] = Character.toString(arr[i].charAt(1));
-			arr1[2] = Character.toString(arr[i].charAt(2));
+			for (int j = 0; j < 3; j++) {
+				arr1[j] = Character.toString(arr[i].charAt(j));
+			}
 			String aa = arr1[0];
 			arr1[0] = arr1[2];
 			arr1[2] = aa;
