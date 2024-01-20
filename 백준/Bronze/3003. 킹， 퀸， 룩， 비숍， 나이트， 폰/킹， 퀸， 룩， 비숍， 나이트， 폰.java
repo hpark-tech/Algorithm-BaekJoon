@@ -11,13 +11,11 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int[] arr = { 1, 1, 2, 2, 2, 8 };
 		StringTokenizer token = new StringTokenizer(br.readLine());
-			bw.write(1 - Integer.parseInt(token.nextToken()) + " ");
-			bw.write(1 - Integer.parseInt(token.nextToken()) + " ");
-			bw.write(2 - Integer.parseInt(token.nextToken()) + " ");
-			bw.write(2 - Integer.parseInt(token.nextToken()) + " ");
-			bw.write(2 - Integer.parseInt(token.nextToken()) + " ");
-			bw.write(8 - Integer.parseInt(token.nextToken()) + " ");
+		for (int i = 0; i < 6; i++) {
+			bw.write(arr[i] - Integer.parseInt(token.nextToken()) + " ");
+		}
 		bw.write("\n");
 		bw.flush();
 	}
