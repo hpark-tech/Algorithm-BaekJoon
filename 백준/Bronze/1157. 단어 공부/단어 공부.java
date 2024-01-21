@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -18,8 +16,8 @@ public class Main {
 		ArrayList<String> list = new ArrayList<>();
 		String n = br.readLine().toUpperCase();
 		for (int i = 0; i < n.length(); i++) {
-			list.add(Character.toString(n.charAt(i)));
-			hs.add(Character.toString(n.charAt(i)));
+			list.add(String.valueOf(n.charAt(i)));
+			hs.add(String.valueOf(n.charAt(i)));
 		}
 		int max = 0;
 		String maxString = "";
