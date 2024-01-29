@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -19,8 +17,10 @@ public class Main {
 		int b = Integer.parseInt(token.nextToken());
 		ArrayList<Integer> remainderList = new ArrayList<>();
 		int quotient = n;
+		int remainder = 0;
 		while (quotient >= b) {
-			remainderList.add(quotient % b);
+            remainder = quotient % b;
+            remainderList.add(remainder);
 			quotient /= b;
 		}
 		if (quotient >= 10) {
