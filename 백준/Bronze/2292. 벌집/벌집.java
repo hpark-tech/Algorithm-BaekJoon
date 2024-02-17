@@ -16,7 +16,7 @@ public class Main {
 		int AccumulateSum = 1;
 		int circleNumber = 6;
 		while (n > AccumulateSum) {
-			increaseOne += 1;
+			increaseOne++;
 			circleNumber = 6 * increaseOne;
 			AccumulateSum += circleNumber;
 			count++;
