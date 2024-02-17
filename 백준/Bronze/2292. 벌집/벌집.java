@@ -1,24 +1,27 @@
-import java.util.Scanner;
+
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-	public static void main(String[] args) {
- 
-		Scanner in = new Scanner(System.in);
- 
-		int n = in.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int n = Integer.parseInt(br.readLine());
 		int count = 1;
-		int range = 2; 
- 
-		if (n == 1) {
-			System.out.print(1);
+		int increaseOne = 0;
+		int AccumulateSum = 1;
+		int circleNumber = 6;
+		while (n > AccumulateSum) {
+			increaseOne += 1;
+			circleNumber = 6 * increaseOne;
+			AccumulateSum += circleNumber;
+			count++;
 		}
- 
-		else {
-			while (range <= n) { 
-				range = range + (6 * count); 
-				count++;
-			}
-			System.out.print(count);
-		}
+		bw.write(count + "\n");
+		bw.flush();
 	}
 }
