@@ -5,30 +5,46 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
+	public static BufferedWriter bw;
+	public static int arr[];
+
+	public static void binarySearch(int startIndex, int endIndex, int k) throws IOException {
+		while (startIndex <= endIndex) {
+			int midIndex = (startIndex + endIndex) / 2;
+			if (arr[midIndex] == k) {
+				bw.write("1" + "\n");
+				return;
+			} else if (k < arr[midIndex] && k >= arr[startIndex]) {
+				endIndex = midIndex - 1;
+			} else if (k > arr[midIndex] && k <= arr[endIndex]) {
+				startIndex = midIndex + 1;
+			} else {
+				bw.write("0" + "\n");
+				return;
+			}
+		}
+	}
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer token;
-		HashSet<Integer> hs = new HashSet<>();
 		int n = Integer.parseInt(br.readLine());
+		arr = new int[n];
 		token = new StringTokenizer(br.readLine());
 		for (int i = 0; i < n; i++) {
-			hs.add(Integer.parseInt(token.nextToken()));
+			arr[i] = Integer.parseInt(token.nextToken());
 		}
+		Arrays.sort(arr);
 		int m = Integer.parseInt(br.readLine());
 		token = new StringTokenizer(br.readLine());
 		for (int i = 0; i < m; i++) {
 			int k = Integer.parseInt(token.nextToken());
-			if (hs.add(k)) {
-				bw.write("0" + "\n");
-				hs.remove(k);
-			} else {
-				bw.write("1" + "\n");
-			}
+			binarySearch(0, n - 1, k);
 		}
 		bw.flush();
 	}
