@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,7 +9,6 @@ public class Main {
 		int b = Integer.parseInt(br.readLine());
 		int c = Integer.parseInt(br.readLine());
 		int sum = a + b + c;
-
 		if (sum != 180) {
 			System.out.println("Error");
 		} else if (a == 60 && b == 60 && c == 60) {
