@@ -8,14 +8,14 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.StringTokenizer;
+import java.util.TreeMap;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		HashMap<String, String> hm = new HashMap<>();
+		TreeMap<String, String> hm = new TreeMap<>(Collections.reverseOrder());
 		ArrayList<String> list = new ArrayList<>();
 		int n = Integer.parseInt(br.readLine());
 		for (int i = 0; i < n; i++) {
@@ -29,11 +29,7 @@ public class Main {
 			}
 		}
 		for (String key : hm.keySet()) {
-			list.add(key);
-		}
-		Collections.sort(list, Collections.reverseOrder());
-		for (String name : list) {
-			bw.write(name + "\n");
+			bw.write(key + "\n");
 		}
 		bw.flush();
 	}
