@@ -12,9 +12,11 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		String st = br.readLine();
-		String[] crotia = {"c=","c-","dz=","d-","lj","nj","s=","z="};
-		for (String s:crotia) {
-			if(st.contains(s)) st = st.replaceAll(s, " ");
+		String[] crotia = { "c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=" };
+		for (String s : crotia) {
+			if (st.contains(s)) {
+				st = st.replaceAll(s, " ");
+			}
 		}
 		bw.write(st.length() + "\n");
 		bw.flush();
