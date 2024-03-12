@@ -15,12 +15,16 @@ public class Main {
 		int b = Integer.parseInt(token.nextToken());
 		int v = Integer.parseInt(token.nextToken());
 		int sum = 0;
-		int count = 0;
-		count = (v - b) / (a - b);
+		int oneDayBefore = (v - a);
+		int days = oneDayBefore / (a - b);
+		int lastDay = 1;
+		if (oneDayBefore % (a - b) == 0) {
+			sum = days + lastDay;
+		} else {
+			sum = days + 1 + lastDay;
+		}
 
-		if( (v-b)%(a-b) != 0)
-			count++;
-		bw.write(count + "\n");
+		bw.write(sum + "\n");
 		bw.flush();
 	}
 }
