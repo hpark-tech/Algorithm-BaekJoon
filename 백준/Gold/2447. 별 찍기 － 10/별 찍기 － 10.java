@@ -1,5 +1,4 @@
 
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -8,24 +7,24 @@ import java.io.OutputStreamWriter;
 
 public class Main {
 	static char[][] arr;
- 
+
 	public static void main(String[] args) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		arr = new char[N][N];      
-		star(0, 0, N, false);
- 
+		arr = new char[N][N];
+		reculsiom(0, 0, N, false);
 		for (int i = 0; i < N; i++) {
-			bw.write(arr[i]);	
+			for (int j = 0; j < N; j++) {
+				bw.write(arr[i][j]);
+			}
 			bw.write("\n");
 		}
 		bw.flush();
 		bw.close();
 	}
- 
-	static void star(int x, int y, int N, boolean blank) {
- 
+
+	static void reculsiom(int x, int y, int N, boolean blank) {
 		if (blank) {
 			for (int i = x; i < x + N; i++) {
 				for (int j = y; j < y + N; j++) {
@@ -34,21 +33,21 @@ public class Main {
 			}
 			return;
 		}
- 
+
 		if (N == 1) {
 			arr[x][y] = '*';
 			return;
 		}
 
-		int size = N / 3;
+		int newSize = N / 3;
 		int count = 0;
-		for (int i = x; i < x + N; i += size) {
-			for (int j = y; j < y + N; j += size) {
+		for (int i = x; i < x + N; i += newSize) {
+			for (int j = y; j < y + N; j += newSize) {
 				count++;
 				if (count == 5) {
-					star(i, j, size, true);
+					reculsiom(i, j, newSize, true);
 				} else {
-					star(i, j, size, false);
+					reculsiom(i, j, newSize, false);
 				}
 			}
 		}
