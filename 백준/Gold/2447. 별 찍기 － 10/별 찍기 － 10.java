@@ -13,7 +13,7 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		arr = new char[N][N];
-		reculsiom(0, 0, N, false);
+		recursion(0, 0, N, false);
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				bw.write(arr[i][j]);
@@ -24,7 +24,7 @@ public class Main {
 		bw.close();
 	}
 
-	static void reculsiom(int x, int y, int N, boolean blank) {
+	static void recursion(int x, int y, int N, boolean blank) {
 		if (blank) {
 			for (int i = x; i < x + N; i++) {
 				for (int j = y; j < y + N; j++) {
@@ -45,9 +45,9 @@ public class Main {
 			for (int j = y; j < y + N; j += newSize) {
 				count++;
 				if (count == 5) {
-					reculsiom(i, j, newSize, true);
+					recursion(i, j, newSize, true);
 				} else {
-					reculsiom(i, j, newSize, false);
+					recursion(i, j, newSize, false);
 				}
 			}
 		}
