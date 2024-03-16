@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,10 +15,10 @@ public class Main {
 		arrM = new int[m];
 		visit = new boolean[n];
 		int depth = 0;
-		reculsion(n, m, depth);
+		recursion(n, m, depth);
 	}
 
-	public static void reculsion(int n, int m, int depth) {
+	public static void recursion(int n, int m, int depth) {
 		if (depth == m) {
 			for (int k : arrM) {
 				System.out.print(k + " ");
@@ -32,7 +30,7 @@ public class Main {
 			if (visit[i] == false) {
 				arrM[depth] = i + 1;
 				visit[i] = true;
-				reculsion(n, m, depth + 1);
+				recursion(n, m, depth + 1);
 				visit[i] = false;
 			}
 		}
