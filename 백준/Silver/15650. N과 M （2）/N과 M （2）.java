@@ -1,3 +1,4 @@
+package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,33 +17,23 @@ public class Main {
 		arrM = new int[m];
 		visit = new boolean[n];
 		int depth = 0;
-		reculsion(n, m, depth);
+		int start = 0;
+		recursion(n, m, depth, start);
 	}
 
-	public static void reculsion(int n, int m, int depth) {
-		int wrong = 0;
+	public static void recursion(int n, int m, int depth, int start) {
 		if (depth == m) {
-			for (int i = 1; i < arrM.length; i++) {
-				if (arrM[i - 1] >arrM[i]) {
-					wrong++;
-					break;
-				}
+			for (int k : arrM) {
+				System.out.print(k + " ");
 			}
-			if (wrong > 0) {
-				return;
-			} else {
-				for (int k : arrM) {
-					System.out.print(k + " ");
-				}
-				System.out.println();
-				return;
-			}
+			System.out.println();
+			return;
 		}
-		for (int i = 0; i < n; i++) {
+		for (int i = start; i < n; i++) {
 			if (visit[i] == false) {
 				arrM[depth] = i + 1;
 				visit[i] = true;
-				reculsion(n, m, depth + 1);
+				recursion(n, m, depth + 1, i + 1);
 				visit[i] = false;
 			}
 		}
